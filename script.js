@@ -11,9 +11,9 @@ textFields.forEach((field) => field.addEventListener('blur', handleBlur));
 const output = document.getElementById('output');
 //Funktionsdeklaration
 function handleBlur(e) {
-    const color = e.target.color;
-    const content = e.target.value;
-    const html = `<p>Innehållet  ${content} har värdet ${color} </p>`;
+    const name = e.target.name;
+    const value = e.target.value;    
+    const html = `<p>Innehållet  ${name} har värdet ${value} </p>`;
    // const html = `<p>${content}</p>`;
     output.insertAdjacentHTML('beforeend', html);
     console.log('TextFields genererade eventet ', e);
