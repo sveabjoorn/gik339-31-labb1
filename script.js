@@ -21,6 +21,14 @@ function handleBlur(e) {
 
 //Uppgift 6
     
+// Lägger till eventlyssnare för knappen
+button.addEventListener('click', (e) => 
+    console.log('Knappen klickades'));
+
+// Lägger till eventlyssnare för checkboxen
+checkBox.addEventListener('change', (e) => 
+    console.log('Checkboxen ändrades'));
+
 
 
 
