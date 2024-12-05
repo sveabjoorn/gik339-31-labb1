@@ -1,7 +1,22 @@
-#btn{
-    color:red;
+.flex {
+    display: flex;
+    flex-direction: row;
+    margin-left: 45%;
+    margin-top: 5rem;
+    width: 50%;
+    
 }
 
-#dynamicDisplay {
-   
+.flex :nth-child(1){
+    flex-basis: 1rem;
+    order: 1;    
+}
+
+.flex :nth-child(2){
+    flex-basis: 1rem;
+    order: 2;
+}
+
+#btn{
+    color:red;    
 }
