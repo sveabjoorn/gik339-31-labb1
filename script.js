@@ -6,7 +6,7 @@ const dynamicDisplay = document.getElementById('dynamicDisplay');
 const form = document.getElementById('settings');
 
 
-// Uppgift 5 Funktionsdeklaration
+// Uppgift 5 Funktionsdeklaration för textfälten
 function handleBlur(e) {
     e.preventDefault();
     const value = e.target.value;
@@ -19,14 +19,17 @@ textFields.forEach((field)=> {
     field.addEventListener('blur', handleBlur);
 });
     
-// Kopplar eventlyssnare för knappen
-button.addEventListener('click', handleClick);
+// Kopplar eventlyssnare och en anonym funktion för knappen
+button.addEventListener('click', function(){
+    e.preventDefault();
+    //querySelector hittar elementet med klassen new-element. remove tar bort elementet.
+    //? =valfri kedjeoperator. Ser till att remove bara anropas om querySelector hittar ett giltigt element
+    //annars händer ingenting
+    dynamicDisplay.querySelector('.new-element')?.remove();  
+}); 
 
-// Kopplar eventlyssnare för checkboxen
-checkBox.addEventListener('change', handleCheckBoxChange);
-
-
-function handleCheckBoxChange(e) {
+// Kopplar eventlyssnare och en anonym funktion för checkboxen
+checkBox.addEventListener('change', function(e) {
 
     // Hämta värden från färg och innehåll
     const colorField = settings.color;
@@ -46,15 +49,4 @@ function handleCheckBoxChange(e) {
 
         dynamicDisplay.insertAdjacentElement('beforeend', newElement);      
     }
-}
-
-
-
-// Funktion för att hantera knappens click-event
-function handleClick(e) {
-    e.preventDefault();
-    //querySelector hittar elementet med klassen new-element. remove tar bort elementet.
-    //? =valfri kedjeoperator. Ser till att remove bara anropas om querySelector hittar ett giltigt element
-    //annars händer ingenting
-    dynamicDisplay.querySelector('.new-element')?.remove();  
-}
+});
