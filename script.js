@@ -7,16 +7,16 @@ const form = document.getElementById('settings');
 
 
 // Uppgift 5 Funktionsdeklaration för textfälten
-function handleBlur(e) {
+function handleTextInput(e) {
+    console.log('TextField');
     e.preventDefault();
-    const value = e.target.value;
-    console.log('TextField', e);
+    const value = e.target.value;    
 }
 
 // Uppgift 6
 // Kopplar eventlyssnare för textfälten
 textFields.forEach((field)=> {
-    field.addEventListener('blur', handleBlur);
+    field.addEventListener('input', handleTextInput);
 });
     
 // Kopplar eventlyssnare och en anonym funktion för knappen
